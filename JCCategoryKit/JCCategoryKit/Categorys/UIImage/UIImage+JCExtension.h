@@ -12,11 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (JCExtension)
 
-/*根据传入图片返回圆形图片*/
--(instancetype)jc_circleImage;
-
-/*根据图片名称返回一张圆形图片*/
-+(instancetype)jc_circleImageWithImageName:(NSString *)name;
+/**
+ 
+ 生成一张高斯模糊的图片
+ 
+ @param image 原图
+ @param blur 模糊程度
+ @return 高斯模糊的图片
+ */
++ (UIImage *)jc_blurImage:(UIImage *)image blur:(CGFloat)blur;
 
 @end
 
