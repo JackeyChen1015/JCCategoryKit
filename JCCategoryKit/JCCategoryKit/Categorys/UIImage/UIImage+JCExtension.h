@@ -22,6 +22,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (UIImage *)jc_blurImage:(UIImage *)image blur:(CGFloat)blur;
 
+/**
+ 生成一张圆形图片
+ 
+ @param originImage 原始图片
+ @param borderColor 边框颜色
+ @param borderWidth 边框宽度
+ @return 圆形图片
+ */
++ (UIImage *)jc_circleImage:(UIImage *)originImage borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
+
 @end
 
 NS_ASSUME_NONNULL_END

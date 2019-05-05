@@ -79,4 +79,37 @@
     return returnImage;
 }
 
+/**
+ 生成一张圆形图片
+ */
++ (UIImage *)jc_circleImage:(UIImage *)originImage borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth
+{
+    // 设置圆形图片的直径
+    CGFloat imageDia = originImage.size.width;
+    // 计算外圆的直径(边框是在图片外额外添加的区域)
+    CGFloat borderDia = imageDia + 2 * borderWidth;
+    
+    // 开启图形上下文
+    UIGraphicsBeginImageContext(originImage.size);
+    // 画一个包含边框的圆形
+    UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, borderDia, borderDia)];
+    // 设置颜色
+    [borderColor set];
+    [path fill];
+    
+    // 设置裁剪区域
+    UIBezierPath *clipPath = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(borderWidth, borderWidth, imageDia, imageDia)];
+    // 裁剪图片
+    [clipPath addClip];
+    
+    // 绘制图片
+    [originImage drawAtPoint:CGPointMake(borderWidth, borderWidth)];
+    // 从上下文中获取图片
+    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
+    // 关闭上下文
+    UIGraphicsEndImageContext();
+    
+    return resultImage;
+}
+
 @end
