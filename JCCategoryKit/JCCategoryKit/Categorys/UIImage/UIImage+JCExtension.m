@@ -137,4 +137,13 @@
     return nil;
 }
 
+/**
+ 生成一张不被渲染的图片
+ */
++ (UIImage *)jc_imageRenderingModeAlowsOriginal:(NSString *)imageName
+{
+    UIImage *image = [UIImage imageNamed:imageName];
+    return [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+}
+
 @end

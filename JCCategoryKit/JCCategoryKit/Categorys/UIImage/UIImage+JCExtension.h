@@ -41,6 +41,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (UIImage *)jc_imageWithColor:(UIColor *)color size:(CGSize)size;
 
+/**
+ 生成一张不被渲染的图片
+ 
+ @param imageName 图片名称
+ @return 不会被渲染的原始图片
+ */
++ (UIImage *)jc_imageRenderingModeAlowsOriginal:(NSString *)imageName;
+
 @end
 
 NS_ASSUME_NONNULL_END
