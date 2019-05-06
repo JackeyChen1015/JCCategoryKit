@@ -32,6 +32,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (UIImage *)jc_circleImage:(UIImage *)originImage borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth;
 
+/**
+ 根据颜色生成一张图片
+ 
+ @param color 颜色
+ @param size 要生成图片的尺寸
+ @return 图片
+ */
++ (UIImage *)jc_imageWithColor:(UIColor *)color size:(CGSize)size;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -112,4 +112,29 @@
     return resultImage;
 }
 
+/**
+ 根据颜色生成一张图片
+ */
++ (UIImage *)jc_imageWithColor:(UIColor *)color size:(CGSize)size
+{
+    if (color) {
+        CGRect rect = CGRectMake(0, 0, size.width, size.height);
+        // 开启图形上下文
+        UIGraphicsBeginImageContext(rect.size);
+        // 获取当前的上下文
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        // 将颜色填充到上下文
+        CGContextSetFillColorWithColor(context, color.CGColor);
+        // 将内容填满指定的尺寸
+        CGContextFillRect(context, rect);
+        // 从上下文获取图片
+        UIImage *image =UIGraphicsGetImageFromCurrentImageContext();
+        // 关闭上下文
+        UIGraphicsEndImageContext();
+        
+        return image;
+    }
+    return nil;
+}
+
 @end
