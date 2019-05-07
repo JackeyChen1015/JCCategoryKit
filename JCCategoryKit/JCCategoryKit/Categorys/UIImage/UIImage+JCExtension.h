@@ -49,6 +49,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (UIImage *)jc_imageRenderingModeAlowsOriginal:(NSString *)imageName;
 
+/**
+ 将图片转换成黑白图像
+ 
+ @param sourceImage 原图
+ @return 黑白图像
+ */
++ (UIImage*)jc_covertToGrayImageFromImage:(UIImage*)sourceImage;
+
 @end
 
 NS_ASSUME_NONNULL_END
