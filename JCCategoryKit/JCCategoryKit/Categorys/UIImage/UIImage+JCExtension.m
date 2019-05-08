@@ -173,4 +173,23 @@
     return grayImage;
 }
 
+/**
+ 旋转图片
+ */
+- (UIImage *)jc_flip:(BOOL)isHorizontal {
+    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
+    
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextClipToRect(ctx, rect);
+    if (isHorizontal) {
+        CGContextRotateCTM(ctx, M_PI); // 旋转
+        CGContextTranslateCTM(ctx, -rect.size.width, -rect.size.height);// 平移
+    }
+    CGContextDrawImage(ctx, rect, self.CGImage);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 @end

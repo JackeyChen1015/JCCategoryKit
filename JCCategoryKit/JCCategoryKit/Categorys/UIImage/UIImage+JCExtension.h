@@ -57,6 +57,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (UIImage*)jc_covertToGrayImageFromImage:(UIImage*)sourceImage;
 
+
+/**
+ *  旋转图片
+ *
+ *  @param isHorizontal 方向
+ *
+ *  @return 结果图片
+ */
+- (UIImage *)jc_flip:(BOOL)isHorizontal;
+
 @end
 
 NS_ASSUME_NONNULL_END
