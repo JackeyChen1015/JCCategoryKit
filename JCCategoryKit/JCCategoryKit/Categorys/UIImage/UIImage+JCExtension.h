@@ -57,6 +57,25 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (UIImage*)jc_covertToGrayImageFromImage:(UIImage*)sourceImage;
 
+/**
+ *  返回指定颜色生成的图片
+ *
+ *  @param color 颜色
+ *  @param size  尺寸
+ *
+ *  @return 指定颜色生成的图片
+ */
++ (UIImage *)jc_imageWithColor:(UIColor *)color andSize:(CGSize)size;
+
+/**
+ *  获取指定尺寸（50*50）的图片
+ *
+ *  @param color 图片颜色
+ *  @param name  文本,居中显示
+ *
+ *  @return 指定尺寸的图片
+ */
++ (UIImage *)jc_imageWithColor:(UIColor *)color text:(NSString *)name;
 
 /**
  *  旋转图片
@@ -66,6 +85,13 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return 结果图片
  */
 - (UIImage *)jc_flip:(BOOL)isHorizontal;
+
+/**
+ *  修正图片方向
+ *
+ *  @return 修改后的图片
+ */
+- (UIImage *)jc_fixOrientation;
 
 @end
 
